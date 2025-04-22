@@ -6,9 +6,12 @@ export const cardsApi = createApi({
     baseQuery:fetchBaseQuery({baseUrl:'https://jsonplaceholder.typicode.com/'}),
     endpoints: (build) => ({
         getPosts: build.query<ICard[], number>({
-            query: (limit) => `posts?limit=${limit}`
-        })
+            query: (limit:number) => `posts?limit=${limit}`
+        }),
+        getCurrentPost: build.query<ICard, number>({
+            query: (id:number) => `posts/${id}`
+        }),
     })
 })
 
-export const {useGetPostsQuery} = cardsApi
+export const {useGetPostsQuery, useGetCurrentPostQuery} = cardsApi
