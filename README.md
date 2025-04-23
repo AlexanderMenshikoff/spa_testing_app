@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Структура проекта
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+spa_testing_app/
+├── .next/                     # Скомпилированные файлы Next.js
+├── node_modules/              # Установленные зависимости
+├── public/                    # Публичные файлы
+├── src/
+│   ├── app/                   # Основная папка приложения
+│   │   ├── cards/             # Динамические маршруты карточек
+│   │   │   ├── [slug]/        # Папка для динамических маршрутов
+│   │   │   │   └── page.tsx   # Страница для отображения конкретной карточки
+│   │   │   └── Cards.tsx      # Компонент для отображения списка карточек
+│   │   ├── components/        # Общие компоненты приложения
+│   │   │   ├── Button.tsx     # Компонент кнопки
+│   │   │   ├── Card.tsx       # Компонент карточки
+│   │   │   ├── Home.tsx       # Компонент главной страницы
+│   │   │   └── UserInfo.tsx   # Компонент для отображения информации о пользователе
+│   │   ├── interfaces/        # Интерфейсы TypeScript
+│   │   │   ├── interface.ts    # Определение интерфейсов
+│   │   ├── redux/             # Redux Toolkit
+│   │   │   ├── cardsApi.ts    # API для карточек
+│   │   │   └── store.ts       # Redux store
+│   │   ├── layout.tsx         # Глобальный шаблон приложения
+│   │   └── page.tsx           # Главная страница приложения
+├── .gitignore                 # Игнорируемые файлы Git
+├── eslint.config.mjs          # Конфигурация ESLint
+├── globals.css                # Глобальные стили
+├── next.config.ts             # Конфигурация Next.js
+├── package-lock.json          # Установленные зависимости
+├── package.json               # Зависимости проекта
+├── postcss.config.mjs         # Конфигурация PostCSS
+├── README.md                  # Документация проекта
+└── tsconfig.json              # Конфигурация TypeScript
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Установка
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Клонируйте репозиторий:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   git clone <URL_репозитория>
+   cd spa_testing_app
+   ```
 
-## Learn More
+2. Установите зависимости:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Запустите приложение:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   npm run dev
+   ```
 
-## Deploy on Vercel
+4. Откройте браузер и перейдите по адресу [http://localhost:3000](http://localhost:3000).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Использование
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- На главной странице отображается список карточек.
+- Каждая карточка содержит информацию, и вы можете нажать на кнопку "Просмотр", чтобы увидеть подробности карточки.
+- Информация о пользователе также отображается на странице карточки, вы можете нажать на кнопку "Назад", чтобы вернуться на главную страницу.
+
+## Технологии
+
+- **React**: Библиотека для создания пользовательских интерфейсов.
+- **Next.js**: Фреймворк для серверного рендеринга и статической генерации.
+- **Redux Toolkit**: Инструмент для управления состоянием приложения.
+- **TypeScript**: Язык программирования, основанный на JavaScript, добавляющий статическую типизацию.
