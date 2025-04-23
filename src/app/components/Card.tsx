@@ -1,12 +1,15 @@
 import { ICard } from '../interfaces/interface';
+import { FC } from 'react';
 
-const Card = ({ id, title, body }: ICard) => {
+const Card:FC<ICard> = ({ id, title, body }) => {
   return (
     <div>
-      <h2>{id}</h2>
+      <h2 className="text-xl bg-white rounded-2xl w-7 flex justify-center mb-4 ">
+        {id}
+      </h2>
       <div>
-        <p>{title}</p>
-        <p>{body}</p>
+        <p className="text-2xl font-bold">{title}</p>
+        <p className="text-xl truncate mt-2">{body}</p>
       </div>
     </div>
   );
